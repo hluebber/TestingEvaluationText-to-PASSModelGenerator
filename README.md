@@ -1,8 +1,8 @@
-# LLMs-For-Subject-Oriented-ProcessModeling
+# TestingEvaluationText-to-PASSModelGenerator
 
-This repository contains the source code, prompts, and generated visualizations for Masters Thesis on:  
-**Exploring the Potential of LLM Technology to Create Subject-Oriented Process Models from Natural Language Texts**.   
-It includes implementations for zero-shot, one-shot, and chain-of-thought (CoT) prompting strategies, as well as a web-based interactive Graphical User Interface (GUI) for interactive human-in-the-loop PASS process modeling.
+This repository contains the source code, prompts, reference models, and generated outputs for the Bachelor's Thesis: **Rigorous Testing and Evaluation of a Text-to-PASS Model Generator**.
+
+It extends the original Text-to-Pass generator (see [original repository](https://github.com/I2PM/Text-to-PASS-Model-Generator)) with an optimized prompt configuration, and model selection.
 
 
  ## Repository Structure
@@ -10,25 +10,43 @@ It includes implementations for zero-shot, one-shot, and chain-of-thought (CoT) 
  This repository has the following structure:  
 ```text
 LLMs-For-Subject-Oriented-ProcessModeling/  
-├── Outputs/  
-│   ├── Thesis_Illustrations/               # Full-size vector graphics used in the thesis  
-│   ├── CoT/                                # CoT visualizations  
-│   ├── OWL/                                # OWL visualizations  
-│   ├── OneShotPrompting/                   # OneShotPrompting visualizations  
-│   └── ZeroShotPrompting/                  # ZeroShotPrompting visualizations  
+├── Outputs/                                # Outputs of the original master's thesis
+│   ├── Thesis_Illustrations/                 # Full-size vector graphics
+│   ├── CoT/                                  # CoT visualizations  
+│   ├── OWL/                                  # OWL visualizations  
+│   ├── OneShotPrompting/                     # OneShotPrompting visualizations  
+│   └── ZeroShotPrompting/                    # ZeroShotPrompting visualizations
+├── ReferenceModels/                        # Manually created reference PASS models used for the evaluation
+│   ├── OWL                                   # Reference models in OWL format
+│   └── VSDX                                  # Reference models as diagrams
 ├── src/                                    # Source code (all scripts)
-    ├── CoT/
-    ├── GUI/                                # GUI notebooks
-        ├── GUI-Interactive/                # Final Web-based human-in-the-loop interactive GUI notebooks
-        ├── Llama/                          # Original Llama notebook (non-interactive)
-        ├── Mistral-Small/                  # Original Mistral notebook (non-interactive)
-    ├── OWL/ 
-    ├── OneShotPrompting/
-    ├── ZeroShotPrompting/ 
+│   ├── CoT/
+│   ├── GUI/                                  # GUI notebooks
+│   │   ├── GUI-Interactive/                    # Final Web-based human-in-the-loop interactive GUI notebooks
+│   │   │   ├── Gemma/                      
+│   │   │   ├── GPT/
+│   │   │   ├── Llama/
+│   │   │   └── Mistral-Small
+│   │   ├── Llama/                            # Original Llama notebook (non-interactive)
+│   │   └── Mistral-Small/                    # Original Mistral notebook (non-interactive)
+│   ├── OWL/ 
+│   ├── OneShotPrompting/
+│   └── ZeroShotPrompting/ 
 ├── README.md                               # This file  
 └── Requirements.txt                        # Python dependencies
 
 ```
+### Final System Configuration
+The optimized system configuration identified in this thesis consists of:
+- **LLM**: gpt-oss-120b
+- **Prompting Strategy**: One-shot prompting
+- **Temperature**: 0.2
+
+This configuration is implemented in the `GUI-Interactive/GPT/gpt-oss-Interactive-OneShot_.ipynb` notebook.
+
+### Reference Models
+Manually created reference PASS models all used test processes are available in the `ReferenceModels/` folder, both in OWL and VSDX format. These models served as ground truth for the structural evaluation conducted in this thesis.
+
 
 ### Model-Specific Folders  
 
